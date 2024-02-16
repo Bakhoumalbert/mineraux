@@ -1,0 +1,7 @@
+folium
+pandas
+streamlit-folium
+streamlit
+plotly
+pandas
+psycopg2
