@@ -1,7 +1,4 @@
 folium
-pand
+pandas
 streamlit-folium
-streamlit
 plotly
-pand
-psycopg2
