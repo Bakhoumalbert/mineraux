@@ -21,8 +21,8 @@ def production():
     for filename in os.listdir(folder_path):
         if filename.endswith(".xlsx"):
             # Lire le fichier Excel et ajouter le DataFrame à la liste
-            df = pd.read_excel(os.path.join(folder_path, filename), header=1)
-            dfs.append(df)
+                df = pd.read_excel(os.path.join(folder_path, filename), header=1)
+                dfs.append(df)
     
 
 
