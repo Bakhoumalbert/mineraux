@@ -47,10 +47,8 @@ def production():
         # Récupérer le DataFrame correspondant à l'année sélectionnée
         selected_df = dfs[years.index(selected_year)]
 
-        st.write(df.loc[2])
-
         # Afficher les données correspondantes à l'année sélectionnée
-        st.write(selected_df)
+        #st.write(selected_df)
 
     
         # # Créer un diagramme en barres pour la répartition des minerais en fonction de la quantité
@@ -71,7 +69,7 @@ def production():
 
         # Créer un diagramme en barres pour la répartition des minerais en fonction de la quantité
         st.subheader('Répartition des minerais en fonction de la quantité')
-        bar_fig = px.bar(df.groupby('Substance_with_unit')['Volume'].sum().reset_index(), x='Substance_with_unit', y='Volume', 
+        bar_fig = px.bar(df.groupby('Substance_with_unit')['Volume'].sum().reset_index(), x='Substance_with_unit', y='Volume', color="Volume", color_continuous_scale='viridis',
                         labels={'Volume': 'Quantité', 'Substance_with_unit': 'Minerai'})
         st.plotly_chart(bar_fig)
 

@@ -13,7 +13,7 @@ def config_map(df):
     pourcentages_purete = df.groupby('MINERAL')['PURETE'].mean().reset_index()
 
     # Créer un diagramme à barres
-    fig = px.bar(pourcentages_purete, x='MINERAL', y='PURETE', title='Pourcentages de Pureté par Minerai', 
+    fig = px.bar(pourcentages_purete, x='MINERAL', y='PURETE', color="PURETE", color_continuous_scale='viridis',title='Pourcentages de Pureté par Minerai', 
                 labels={'MINERAL': 'Minerai', 'PURETE': 'Pourcentage de Pureté'})
 
     # Afficher le diagramme à barres
