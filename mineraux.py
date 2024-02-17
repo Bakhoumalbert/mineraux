@@ -7,13 +7,17 @@ import plotly.express as px
 
 def config_map(df):
 
+
+    st.subheader("Afficher les données :")
     st.write(df)
     
     # Calculer les pourcentages de pureté pour chaque minerai
     pourcentages_purete = df.groupby('MINERAL')['PURETE'].mean().reset_index()
 
+    st.write("--------------------------------------------------")
     # Créer un diagramme à barres
-    fig = px.bar(pourcentages_purete, x='MINERAL', y='PURETE', color="PURETE", color_continuous_scale='viridis',title='Pourcentages de Pureté par Minerai', 
+    st.subheader('Pourcentages de Pureté par Minerai')
+    fig = px.bar(pourcentages_purete, x='MINERAL', y='PURETE', color="PURETE", color_continuous_scale='viridis',
                 labels={'MINERAL': 'Minerai', 'PURETE': 'Pourcentage de Pureté'})
 
     # Afficher le diagramme à barres
@@ -23,13 +27,13 @@ def config_map(df):
 # Fonction pour afficher la page d'accueil
 def static_mineraux():
 
-    # st.set_page_config(page_title="MFPAI Reporting", page_icon=":bar_chart:", layout="wide")
 
-    st.title(":gem: MinerauxVisuaux")
+    st.title(":gem: Gites Minéraux du Sénégal")
     st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
     st.write("""
-        Cette application vous permet de visualiser différentes données.
+        Cette application vous permet de visualiser la répartition des minerais du sénégal.
     """)
+    #st.set_page_config(page_title="MFPAI Reporting", page_icon=":bar_chart:", layout="wide")
 
 
     df = pd.read_csv("data/correct_data.csv")
@@ -37,8 +41,8 @@ def static_mineraux():
     
 
     # Create a map centered based on the entire dataset
-    map_center = [df['LONGITUDE'].mean(), df['LATITUDE'].mean()]
-    m = folium.Map(location=map_center, zoom_start=7)
+    map_center = [df['LONGITUDE'].mean()+1, df['LATITUDE'].mean()-1]
+    m = folium.Map(location=map_center, zoom_start=7.5)
     st.sidebar.write("-----------------------------------")
     # Afficher la carte Folium dans Streamlit
     st.sidebar.subheader("Choisir la localisation en fonction du minerai")
@@ -113,7 +117,8 @@ def static_mineraux():
         for location in mineral_locations:
             folium.Circle(location, radius=500, color='blue', fill=True, fill_color='blue').add_to(m)
 
-    folium_static(m, width=920, height=600)
+    folium_static(m, width=1400, height=650)
+    st.write("--------------------------------------------------")
 
     # Affichage de la carte
     config_map(df)

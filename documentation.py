@@ -3,9 +3,6 @@ import streamlit as st
 def documentation():
     st.title(":books: Documentation")
     st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
-    st.write("""
-        Cette application vous permet de visualiser différentes données.
-    """)
 
     folder_img = "data/img/"
     # Définition des informations sur chaque minerai
@@ -35,15 +32,18 @@ def documentation():
 
     # Afficher le titre de la page
     st.title("Documentation des Minerais")
+    st.subheader("""
+        Vous aurez des informations sur chaque minerai présent au Sénégal
+    """)
 
     for minerai in minerais:
         
         # Diviser l'espace en colonnes
-        col1, col2 = st.columns([1, 3])
+        col1, _ ,col2 = st.columns([1, 0.5 ,3])
 
         # Dans la première colonne, afficher l'image
         with col1:
-            st.image(minerai["photo"], width=200)
+            st.image(minerai["photo"], width=250)
 
         # Dans la deuxième colonne, afficher la description
         with col2:
