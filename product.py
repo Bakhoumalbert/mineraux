@@ -12,7 +12,7 @@ def production():
     """)
     
     # Chemin du dossier contenant les fichiers Excel
-    folder_path = "./data/exploitation"
+    folder_path = "/mount/src/mineraux/data/exploitation"
 
     # Liste pour stocker les DataFrames de chaque fichier
     dfs = []
