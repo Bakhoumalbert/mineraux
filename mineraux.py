@@ -117,7 +117,7 @@ def static_mineraux():
         for location in mineral_locations:
             folium.Circle(location, radius=500, color='blue', fill=True, fill_color='blue').add_to(m)
 
-    folium_static(m, width=900, height=600)
+    folium_static(m, width=600, height=600)
     st.write("--------------------------------------------------")
 
     # Affichage de la carte
