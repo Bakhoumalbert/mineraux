@@ -18,12 +18,18 @@ def production():
     dfs = []
 
     # Parcourir tous les fichiers dans le dossier
+    # Parcourir les fichiers dans le dossier
     for filename in os.listdir(folder_path):
         if filename.endswith(".xlsx"):
-            # Lire le fichier Excel et ajouter le DataFrame à la liste
+            try:
+                # Lire le fichier Excel et ajouter le DataFrame à la liste
                 df = pd.read_excel(os.path.join(folder_path, filename), header=1)
                 dfs.append(df)
-    
+            except FileNotFoundError:
+                st.error(f"Fichier {filename} non trouvé. Veuillez vérifier le chemin d'accès.")
+            except Exception as e:
+                st.success(f"Une erreur s'est produite lors de la lecture du fichier {filename} : {e}")
+        
 
 
     # Vérifier si des fichiers ont été trouvés
