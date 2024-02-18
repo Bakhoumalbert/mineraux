@@ -1,55 +1,61 @@
 import streamlit as st
+import json
 
 def documentation():
     st.title(":books: Documentation")
     st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
-    folder_img = "data/img/"
-    # Définition des informations sur chaque minerai
-    minerais = [
-        {
-            "nom": "OR",
-            "photo": folder_img + "or.jpg",
-            "description": "L'or est l'élément chimique de numéro atomique 79, de symbole Au. Ce symbole, choisi par Berzelius, est formé des deux premières lettres du mot latin aurum (de même sens)."
-        },
-        {
-            "nom": "URANIUM",
-            "photo": folder_img + "uranium.jpg",
-            "description": "L'uranium est un élément chimique de symbole U et qui porte le numéro atomique 92. L'uranium naturel est constitué de trois isotopes : l'uranium 238, le plus lourd et le plus abondant, l'uranium 235 et l'uranium 234. L'uranium 235 est le seul isotope fissile."
-        },
-        {
-            "nom": "FER",
-            "photo": folder_img + "fer.jpg",
-            "description": "Le fer est un oligo-élément qui entre dans la composition de l'hémoglobine des globules rouges, de la myoglobine des muscles, et de nombreuses réactions enzymatiques nécessaires à la respiration des cellules."
-        },
-        {
-            "nom": "Lithium",
-            "photo": folder_img + "lithium.jpg",
-            "description": "Le lithium est l'élément chimique de numéro atomique 3, de symbole Li. C'est un métal alcalin, situé dans le premier groupe du tableau périodique des éléments. Très réactif, le lithium n'existe pas à l'état natif dans le milieu naturel, mais uniquement sous la forme de composés ioniques."
-        },
-        # Ajoutez des informations sur les autres minerais
-    ]
+    with open("data/documentation/minerais.json", "r", encoding="utf-8") as json_file:
+        data = json.load(json_file)
 
+    
     # Afficher le titre de la page
     st.title("Documentation des Minerais")
     st.subheader("""
         Vous aurez des informations sur chaque minerai présent au Sénégal
     """)
 
-    for minerai in minerais:
-        
+
+    for minerai, details in data.items():
         # Diviser l'espace en colonnes
         col1, _ ,col2 = st.columns([1, 0.5 ,3])
 
-        # Dans la première colonne, afficher l'image
         with col1:
-            st.image(minerai["photo"], width=250)
-
-        # Dans la deuxième colonne, afficher la description
+            st.title(minerai)
+            if "Image" in details and details["Image"]:
+                st.image(details["Image"], use_column_width=True)
         with col2:
-            st.subheader(minerai["nom"])
-            st.write(minerai["description"])
-        st.write("-------------------------------------------------------------------")
+            if "Description" in details and details["Description"]:
+                st.subheader("Description:")
+                st.write(details["Description"])
+            if "Usages" in details and details["Usages"]:
+                st.subheader("Usages:")
+                if "Usages" in details:
+                    usages_data = details["Usages"]
+                    if isinstance(usages_data, dict):
+                        for usage, pourcentage in usages_data.items():
+                            st.write(f"{usage}: {pourcentage}")
+                    elif isinstance(usages_data, list):
+                        for usage_item in usages_data:
+                            st.write(usage_item)
+                    else:
+                        st.warning("Le format des données 'Usages' n'est pas pris en charge.")
+                else:
+                    st.warning("Aucune donnée d'usages n'a été trouvée.")
+            if "use_image" in details and details["use_image"]:
+                st.write("Cas d'usage")
+                # Créer un ensemble pour stocker les URL des images déjà affichées
+                displayed_images = set()
 
+                # Parcourir toutes les images
+                for image_url in details['use_image']:
+                    # Vérifier si l'image a déjà été affichée
+                    if image_url not in displayed_images:
+                        # Ajouter l'image à l'ensemble des images déjà affichées
+                        displayed_images.add(image_url)
+                        # Afficher l'image
+                        st.image(image_url, width=100)
+        st.write("-------------------------------------------------------------------")
+        
 if __name__ == "__main__":
     documentation()

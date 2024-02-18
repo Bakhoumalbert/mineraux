@@ -1,0 +1,93 @@
+{
+  "Lithium": {
+    "Minerai": "Pegmatites",
+    "Image":  "data/img/lithium.jpg",
+    "Description": "Le lithium (Li) est un métal alcalin, pur et mou, de couleur gris argenté, qui se ternit et s'oxyde très rapidement au contact de l'air et de l'eau, prenant ainsi une teinte gris foncé virant rapidement à l'anthracite et au noir. Le lithium est présent en faible quantité dans les roches magmatiques, sa concentration la plus importante étant au sein des granites. Les pegmatites granitiques sont les minéraux présentant la plus forte abondance en lithium. Le spodumène et la pétalite étant les sources les plus viables pour une exploitation commerciale.",
+    "Usages": {
+      "Verres et céramiques": "35%",
+      "Piles et Batteries": "31%",
+      "Graisses lubrifiantes": "8%",
+      "Traitement de l’air": "5%",
+      "Métallurgie (Alliages)": "6%",
+      "Produits pharmaceutiques": "2%"
+    }
+  },
+  "Or": {
+    "Minerai": "Or filonien contenu dans les structures",
+    "Image":  "data/img/or.jpg",
+    "Contrôle des minéralisation": "Structurale",
+    "Description": "Les formations birimiennes du Sénégal Oriental renferment un important potentiel aurifère. Les processus hydrothermaux sont à l’origine de la mise en place de l’or dans les formations rocheuses. C’est pourquoi, le Sénégal Oriental accueille de nombreuses compagnies de recherche minière depuis la découverte du gisement d’or de Sabodala. Les travaux d’exploration ont mis en évidence de nombreuses anomalies notamment dans les zones de Niamia, Daorola-Boto, Bambadji, Massawa, Kéniéba et de Sabodala.",
+    "Usages": {
+      "Gisement d'or de Sabodala Gold Operations SA (SGO)": "Réserves de 1,63 millions d'onces",
+      "Gisement d'or de Niakafiri de SGO": "Les ressources en or identifiées sont estimées à 300.000 onces",
+      "Gisement d'or de Massawa de RANDGOLD": "Un important potentiel aurifère de plus de 3 millions d'onces mais avec la particularité d'être de l'or réfractaire",
+      "Gisement d'or de Mako de Toro Gold Limited": "Les ressources s’élèvent à ce jour à environ 1,3 millions d'onces",
+      "Gisement d'or de Makabingui de la société Bassari Resources": "Ressources s’élevant à 1.096.000 onces",
+      "Gisement d'or de Boto société IAMGOLD": "Les résultats de l’étude de faisabilité estiment les ressources à 48 Mt à 1.61 g/t et les réserves à 1 926 000 onces"
+    }
+  },
+  "Uranium": {
+    "Minerai": "Schistes graphiteux",
+    "Image":  "data/img/uranium.jpg",
+    "Description": "Gisements localisés dans l’Est Saraya. Aussi, les schistes graphiteux de Mako et Dialé peuvent susciter un intérêt pour la recherche en uranium.",
+    "Usages": [
+      "Production d'énergie nucléaire",
+      "Applications militaires par la fabrication d’armes de destruction massive"
+    ]
+  },
+  "Fer": {
+    "Minerai": "Magnétite et hématite",
+    "Image":  "data/img/fer.jpg",
+    "Description": "Un gisement de classe mondiale devant être exploité dans un futur proche. Les gisements localisés en quatre zones distinctes sont estimés à 750 millions de tonnes. Réserves : estimées à plus de 750 millions de tonnes de minerais de fer (Hématite ou minerai oxydé : 59% Fe in-situ/ Magnétite : 43% Fe in-situ) dont 695 millions de tonnes prouvées.",
+    "Impact socio-économique pour le Sénégal": [
+      "Contribution au désenclavement et à l’industrialisation du Sénégal oriental",
+      "Création de 20 000 emplois dont 4 000 directs et 16 000 indirects (mine, chemin de fer, port)",
+      "5 000 emplois supplémentaires (unité sidérurgique)"
+    ],
+    "use_image": ["data/img/use_fer.jpg"]
+  },
+  "Cuivre": {
+    "Minerai": "chalcopyrite, la bornite et la covellite",
+    "Image":  "data/img/cuivre.jpg",
+    "Description": "Le Sénégal possède des gisements de cuivre qui sont principalement situés dans les régions orientales du pays, notamment dans les zones de Kédougou et de Mako. Les gisements de cuivre au Sénégal sont associés à des formations géologiques telles que les roches volcaniques et les intrusions magmatiques.",
+    "Usages": "Le cuivre est un métal précieux utilisé dans de nombreux secteurs industriels, notamment la construction, l'électronique, l'électroménager, les transports et les infrastructures.",
+    "use_image": ["data/img/use_cuivre.jpg"]
+  },
+
+  "Nickel": {
+    "Minerai": "péridotites et les norites",
+    "Image":  "data/img/nickel.jpg",
+    "Description": "Les gisements de nickel se présentent sous différentes formes et sont associés à diverses formations géologiques. Le potentiel a été confirmé dans les secteurs de Simpampou, Koulontou et Dioudiou-Konko.",
+    "Types de gisements de nickel les plus courants": [
+      "Gisements de sulfures de nickel",
+      "Gisements de nickel dans les intrusions mafiques-ultramafiques",
+      "Gisements de nickel hydrothermal"
+    ],
+    "use_image": ["data/img/use_nickel.jpg", "data/img/use_nickel_1.jpg"]
+  },
+  "Plomb": {
+    "Minerai": "Galène",
+    "Image":  "data/img/plomb.jpg",
+    "Description": "Les minerais de plomb se présentent sous différentes formes et peuvent être associés à diverses formations géologiques. Les minerais de plomb sont souvent associés à des gisements de zinc, de cuivre, d'argent et d'autres métaux, et peuvent être exploités pour la production de plomb métallique, d'alliages de plomb, de produits chimiques à base de plomb et d'autres applications industrielles.",
+    "Usages": "Production d'acide plombique pour l'industrie des produits chimiques.",
+    "use_image" : ["data/img/use_plomb.jpg"]
+  },
+  "Diamant": {
+    "Minerai": "Kimberlites et lamproites",
+    "Image":  "data/img/diamant.jpg",
+    "Description": "Le diamant est l'une des gemmes les plus précieuses et les plus recherchées au monde. Il se forme naturellement à des profondeurs élevées dans le manteau terrestre sous des conditions de haute température et de haute pression. Les diamants sont utilisés dans une variété d'applications, notamment dans la fabrication de bijoux, de montres, d'outils de coupe industriels, de dispositifs de coupe laser, et même dans certains équipements scientifiques.",
+    "use_image": ["data/img/use_diamant.jpg"]
+  },
+  "Marbre": {
+    "Minerai": "Roches métamorphiques dérivées du calcaire",
+    "Image":  "data/img/marbre.jpg",
+    "Description": "Le marbre est une roche métamorphique dérivée du calcaire ou de la dolomie qui a subi une recristallisation sous l'effet de la chaleur et de la pression. Les gisements de marbre du Sénégal se sont formés à partir de calcaires métamorphisés sous l'effet des forces tectoniques et des processus géologiques associés. Le marbre du Sénégal est utilisé dans une gamme d'applications architecturales et de décoration intérieure. Il est souvent utilisé pour les revêtements de sols et de murs, les comptoirs de cuisine et de salle de bains, les éléments de décoration, les sculptures et les monuments. En raison de sa beauté naturelle et de sa durabilité, le marbre est apprécié pour son aspect luxueux et intemporel.",
+    "use_image": ["data/img/use_marbre.jpg"]
+  },
+  "Etain": {
+    "Minerai": "Filons de quartz",
+    "Image":  "data/img/etain.jpg",
+    "Description": "Les minerais d'étain, également connus sous le nom de cassitérite, sont des minéraux qui contiennent du dioxyde d'étain (SnO2) en concentration économiquement exploitable. L'étain métallique est largement utilisé dans l'industrie pour la fabrication de divers produits, notamment les soudures, les alliages de bronze et de laiton, les revêtements protecteurs, les emballages alimentaires et les composants électroniques. Il est également utilisé dans la production de verre, de céramique et de pigments.",
+    "use_image": ["data/img/use_etain.jpg", "data/img/use_etain1.jpg"]
+  }
+}
